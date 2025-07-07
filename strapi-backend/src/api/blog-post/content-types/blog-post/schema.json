@@ -1,0 +1,182 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blog_posts",
+  "info": {
+    "singularName": "blog-post",
+    "pluralName": "blog-posts",
+    "displayName": "Blog Post",
+    "description": "AI-enhanced blog posts with rich markdown support"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "contentMarkdown": {
+      "type": "text",
+      "description": "Markdown version of content with syntax highlighting support"
+    },
+    "contentFormat": {
+      "type": "enumeration",
+      "enum": ["richtext", "markdown", "html"],
+      "default": "markdown"
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "coAuthors": {
+      "type": "json",
+      "description": "List of co-authors including AI assistants"
+    },
+    "publishedDate": {
+      "type": "datetime"
+    },
+    "lastModified": {
+      "type": "datetime"
+    },
+    "tags": {
+      "type": "json"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category"
+    },
+    "relatedPosts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-post.blog-post"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "draft": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article-draft.article-draft"
+    },
+    "storyIdea": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::story-idea.story-idea"
+    },
+    "aiEnhanced": {
+      "type": "boolean",
+      "default": false
+    },
+    "aiMetadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ai.metadata"
+    },
+    "aiWritingAssistant": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ai.writing-assistant"
+    },
+    "references": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::reference.reference"
+    },
+    "citations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::citation.citation"
+    },
+    "wordCount": {
+      "type": "integer"
+    },
+    "readingTime": {
+      "type": "integer",
+      "description": "Estimated reading time in minutes"
+    },
+    "viewCount": {
+      "type": "integer",
+      "default": 0
+    },
+    "likeCount": {
+      "type": "integer",
+      "default": 0
+    },
+    "shareCount": {
+      "type": "integer",
+      "default": 0
+    },
+    "commentCount": {
+      "type": "integer",
+      "default": 0
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "sticky": {
+      "type": "boolean",
+      "default": false
+    },
+    "accessLevel": {
+      "type": "enumeration",
+      "enum": ["public", "members", "premium", "private"],
+      "default": "public"
+    },
+    "publishingSchedule": {
+      "type": "component",
+      "repeatable": false,
+      "component": "publishing.schedule"
+    },
+    "mcpIntegrations": {
+      "type": "component",
+      "repeatable": true,
+      "component": "integrations.mcp-integration"
+    },
+    "codeBlocks": {
+      "type": "json",
+      "description": "Code blocks with syntax highlighting metadata"
+    },
+    "tableOfContents": {
+      "type": "json",
+      "description": "Auto-generated table of contents"
+    },
+    "searchKeywords": {
+      "type": "text",
+      "description": "Additional keywords for search optimization"
+    }
+  }
+}

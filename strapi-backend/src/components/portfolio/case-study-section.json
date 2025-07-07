@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_portfolio_case_study_sections",
+  "info": {
+    "displayName": "Case Study Section",
+    "description": "Section of a case study with heading and content",
+    "icon": "file-text"
+  },
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

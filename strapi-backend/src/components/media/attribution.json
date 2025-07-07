@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_media_attribution",
+  "info": {
+    "displayName": "Attribution",
+    "description": "Media attribution and credits"
+  },
+  "options": {},
+  "attributes": {
+    "author": {
+      "type": "string"
+    },
+    "authorUrl": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "sourceUrl": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "licenseUrl": {
+      "type": "string"
+    },
+    "attributionRequired": {
+      "type": "boolean",
+      "default": true
+    },
+    "attributionText": {
+      "type": "text"
+    }
+  }
+}

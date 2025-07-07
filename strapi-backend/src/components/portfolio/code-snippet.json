@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_portfolio_code_snippets",
+  "info": {
+    "displayName": "Code Snippet",
+    "description": "Code example with syntax highlighting",
+    "icon": "code"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "javascript",
+        "typescript",
+        "python",
+        "java",
+        "cpp",
+        "csharp",
+        "go",
+        "rust",
+        "swift",
+        "kotlin",
+        "html",
+        "css",
+        "scss",
+        "json",
+        "yaml",
+        "markdown",
+        "bash",
+        "sql",
+        "graphql",
+        "other"
+      ],
+      "default": "javascript",
+      "required": true
+    },
+    "code": {
+      "type": "text",
+      "required": true
+    },
+    "fileName": {
+      "type": "string"
+    },
+    "highlightLines": {
+      "type": "string"
+    }
+  }
+}

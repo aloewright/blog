@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "references",
+  "info": {
+    "singularName": "reference",
+    "pluralName": "references",
+    "displayName": "Reference",
+    "description": "Scholarly references and citations"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "authors": {
+      "type": "json",
+      "required": true
+    },
+    "publicationDate": {
+      "type": "date"
+    },
+    "publicationType": {
+      "type": "enumeration",
+      "enum": ["journal", "book", "conference", "website", "report", "thesis", "patent", "other"]
+    },
+    "journal": {
+      "type": "string"
+    },
+    "volume": {
+      "type": "string"
+    },
+    "issue": {
+      "type": "string"
+    },
+    "pages": {
+      "type": "string"
+    },
+    "doi": {
+      "type": "string"
+    },
+    "isbn": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "abstract": {
+      "type": "text"
+    },
+    "keywords": {
+      "type": "json"
+    },
+    "citationFormats": {
+      "type": "component",
+      "repeatable": false,
+      "component": "reference.citation-formats"
+    },
+    "pdfFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["files"]
+    },
+    "notes": {
+      "type": "richtext"
+    },
+    "aiAnalysis": {
+      "type": "json",
+      "description": "AI analysis of the reference content"
+    }
+  }
+}

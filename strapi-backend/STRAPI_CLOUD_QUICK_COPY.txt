@@ -1,0 +1,33 @@
+# STRAPI CLOUD ENVIRONMENT VARIABLES - QUICK COPY
+# Copy each line below into Strapi Cloud dashboard
+# Format: KEY=VALUE
+
+# === REQUIRED VARIABLES ===
+
+NODE_ENV=production
+APP_KEYS=sQ/zZWWlzsrX/8YfyjUspw==,bJ0/lFPFrNDffC7ebJ8d6A==
+API_TOKEN_SALT=jENBAMaluz468MtiAwIRnw==
+ADMIN_JWT_SECRET=yXvZ6pDx/9HpfODstBKQ1PKdS3IvrCunniknQjn9CGA=
+TRANSFER_TOKEN_SALT=gECz36v8q4nNlUSlyodFuA==
+JWT_SECRET=snM/O8GKiIX8S/YtSC/ZGTO/nHsq5r0h1SE/eZ7lyU4=
+
+# === OPTIONAL: MEDIA SEARCH APIs ===
+# Only add if using these integrations
+
+UNSPLASH_ACCESS_KEY=your-unsplash-access-key-here
+LOTTIE_API_KEY=your-lottie-api-key-here
+
+# === OPTIONAL: CLOUD STORAGE ===
+# Choose either Cloudflare R2 OR Google Cloud Storage, not both
+
+# Option A: Cloudflare R2
+CLOUDFLARE_R2_ENDPOINT=https://your-account-id.r2.cloudflarestorage.com
+CLOUDFLARE_R2_ACCESS_KEY_ID=your-r2-access-key-id
+CLOUDFLARE_R2_SECRET_ACCESS_KEY=your-r2-secret-access-key
+CLOUDFLARE_R2_BUCKET=your-bucket-name
+CLOUDFLARE_R2_PUBLIC_URL=https://your-custom-domain.com
+
+# Option B: Google Cloud Storage
+GCS_SERVICE_ACCOUNT=your-base64-encoded-service-account-json
+GCS_BUCKET_NAME=your-gcs-bucket-name
+GCS_BASE_URL=https://storage.googleapis.com/your-bucket-name

@@ -1,0 +1,136 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portfolio_items",
+  "info": {
+    "singularName": "portfolio-item",
+    "pluralName": "portfolio-items",
+    "displayName": "Portfolio Item",
+    "description": "Portfolio items showcasing work and projects"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "techStack": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.tech-stack"
+    },
+    "projectUrl": {
+      "type": "string"
+    },
+    "githubUrl": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": ["web", "mobile", "desktop", "design", "other"]
+    },
+    "projectType": {
+      "type": "enumeration",
+      "enum": [
+        "personal",
+        "client",
+        "open-source",
+        "academic",
+        "hackathon"
+      ]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["completed", "in-progress", "planned"]
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "completedDate": {
+      "type": "date"
+    },
+    "client": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "teamSize": {
+      "type": "integer"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "integer"
+    },
+    "caseStudySections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.case-study-section"
+    },
+    "codeSnippets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.code-snippet"
+    },
+    "demoLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.demo-link"
+    },
+    "challenges": {
+      "type": "richtext"
+    },
+    "solutions": {
+      "type": "richtext"
+    },
+    "impact": {
+      "type": "richtext"
+    },
+    "testimonial": {
+      "type": "text"
+    },
+    "testimonialAuthor": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "json"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

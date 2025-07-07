@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_publishing_schedules",
+  "info": {
+    "displayName": "Publishing Schedule",
+    "description": "Auto-publishing configuration and schedule"
+  },
+  "options": {},
+  "attributes": {
+    "scheduledPublishDate": {
+      "type": "datetime"
+    },
+    "scheduledUnpublishDate": {
+      "type": "datetime"
+    },
+    "autoPublish": {
+      "type": "boolean",
+      "default": false
+    },
+    "publishingPlatforms": {
+      "type": "json",
+      "description": "Platforms to publish to (wordpress, medium, dev.to, etc.)"
+    },
+    "socialMediaSchedule": {
+      "type": "json",
+      "description": "Schedule for social media posts"
+    },
+    "emailNewsletter": {
+      "type": "boolean",
+      "default": false
+    },
+    "newsletterSegments": {
+      "type": "json",
+      "description": "Email segments to send to"
+    },
+    "timezone": {
+      "type": "string",
+      "default": "UTC"
+    },
+    "publishingStatus": {
+      "type": "enumeration",
+      "enum": ["draft", "scheduled", "published", "failed", "cancelled"],
+      "default": "draft"
+    },
+    "publishingLog": {
+      "type": "json",
+      "description": "Log of publishing attempts and results"
+    }
+  }
+}

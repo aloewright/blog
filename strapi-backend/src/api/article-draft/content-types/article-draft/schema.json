@@ -1,0 +1,99 @@
+{
+  "kind": "collectionType",
+  "collectionName": "article_drafts",
+  "info": {
+    "singularName": "article-draft",
+    "pluralName": "article-drafts",
+    "displayName": "Article Draft",
+    "description": "AI-enhanced article drafts with writing assistance"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "workingTitle": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "outline": {
+      "type": "richtext"
+    },
+    "notes": {
+      "type": "richtext"
+    },
+    "aiSuggestions": {
+      "type": "json",
+      "description": "AI-generated suggestions for improvement"
+    },
+    "aiOutline": {
+      "type": "json",
+      "description": "AI-generated article outline"
+    },
+    "aiKeywords": {
+      "type": "json",
+      "description": "AI-extracted keywords and topics"
+    },
+    "researchNotes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::research-note.research-note"
+    },
+    "references": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::reference.reference"
+    },
+    "writingPrompts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::writing-prompt.writing-prompt"
+    },
+    "version": {
+      "type": "integer",
+      "default": 1
+    },
+    "wordCount": {
+      "type": "integer"
+    },
+    "readingTime": {
+      "type": "integer"
+    },
+    "sentiment": {
+      "type": "enumeration",
+      "enum": ["positive", "neutral", "negative", "mixed"]
+    },
+    "tone": {
+      "type": "enumeration",
+      "enum": ["formal", "casual", "academic", "journalistic", "creative", "technical"]
+    },
+    "targetAudience": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "enumeration",
+      "enum": ["idea", "research", "outline", "draft", "revision", "editing", "ready"]
+    },
+    "publishTarget": {
+      "type": "date"
+    },
+    "collaborators": {
+      "type": "json"
+    },
+    "aiMetadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ai.metadata"
+    }
+  }
+}

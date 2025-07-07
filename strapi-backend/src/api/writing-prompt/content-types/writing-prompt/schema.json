@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "writing_prompts",
+  "info": {
+    "singularName": "writing-prompt",
+    "pluralName": "writing-prompts",
+    "displayName": "Writing Prompt",
+    "description": "AI writing prompts and templates"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "prompt": {
+      "type": "text",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": ["brainstorming", "outline", "introduction", "conclusion", "analysis", "creative", "technical", "research"]
+    },
+    "variables": {
+      "type": "json",
+      "description": "Variables that can be filled in the prompt"
+    },
+    "examples": {
+      "type": "json"
+    },
+    "targetLength": {
+      "type": "string"
+    },
+    "tone": {
+      "type": "enumeration",
+      "enum": ["formal", "casual", "academic", "journalistic", "creative", "technical"]
+    },
+    "useCase": {
+      "type": "text"
+    }
+  }
+}

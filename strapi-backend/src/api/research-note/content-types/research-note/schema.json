@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "research_notes",
+  "info": {
+    "singularName": "research-note",
+    "pluralName": "research-notes",
+    "displayName": "Research Note",
+    "description": "Research notes and findings for articles"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "summary": {
+      "type": "text"
+    },
+    "source": {
+      "type": "string"
+    },
+    "sourceUrl": {
+      "type": "string"
+    },
+    "sourceType": {
+      "type": "enumeration",
+      "enum": ["article", "book", "website", "interview", "podcast", "video", "academic_paper", "report", "other"]
+    },
+    "tags": {
+      "type": "json"
+    },
+    "quotes": {
+      "type": "json"
+    },
+    "keyInsights": {
+      "type": "json"
+    },
+    "relatedTopics": {
+      "type": "json"
+    },
+    "credibilityScore": {
+      "type": "decimal",
+      "min": 0,
+      "max": 10
+    },
+    "dateAccessed": {
+      "type": "datetime"
+    },
+    "aiSummary": {
+      "type": "text",
+      "description": "AI-generated summary of the research"
+    },
+    "aiExtractedFacts": {
+      "type": "json",
+      "description": "AI-extracted facts and data points"
+    },
+    "attachments": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos"]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "collectionName": "components_integrations_mcp_integrations",
+  "info": {
+    "displayName": "MCP Integration",
+    "description": "Model Context Protocol integration configuration"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "serverUrl": {
+      "type": "string",
+      "description": "MCP server endpoint URL"
+    },
+    "authenticationType": {
+      "type": "enumeration",
+      "enum": ["none", "apiKey", "oauth", "custom"],
+      "default": "none"
+    },
+    "capabilities": {
+      "type": "json",
+      "description": "List of MCP capabilities supported"
+    },
+    "resources": {
+      "type": "json",
+      "description": "Available MCP resources"
+    },
+    "tools": {
+      "type": "json",
+      "description": "Available MCP tools and their configurations"
+    },
+    "prompts": {
+      "type": "json",
+      "description": "MCP prompt templates"
+    },
+    "configuration": {
+      "type": "json",
+      "description": "Additional configuration parameters"
+    },
+    "lastSync": {
+      "type": "datetime"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["connected", "disconnected", "error", "pending"],
+      "default": "disconnected"
+    }
+  }
+}

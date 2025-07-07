@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "visual_assets",
+  "info": {
+    "singularName": "visual-asset",
+    "pluralName": "visual-assets",
+    "displayName": "Visual Asset",
+    "description": "Saved visual assets from external sources"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["unsplash_image", "lottie_animation", "icon", "uploaded_file"],
+      "required": true
+    },
+    "externalId": {
+      "type": "string"
+    },
+    "externalUrl": {
+      "type": "string"
+    },
+    "localFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos"]
+    },
+    "thumbnailUrl": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "json"
+    },
+    "dimensions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "media.dimensions"
+    },
+    "attribution": {
+      "type": "component",
+      "repeatable": false,
+      "component": "media.attribution"
+    },
+    "tags": {
+      "type": "json"
+    },
+    "usedIn": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-post.blog-post"
+    },
+    "usedInDrafts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article-draft.article-draft"
+    },
+    "usedInPortfolio": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::portfolio-item.portfolio-item"
+    },
+    "favorite": {
+      "type": "boolean",
+      "default": false
+    },
+    "downloadedAt": {
+      "type": "datetime"
+    },
+    "lastUsedAt": {
+      "type": "datetime"
+    },
+    "usageCount": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

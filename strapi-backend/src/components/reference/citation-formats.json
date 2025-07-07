@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_reference_citation_formats",
+  "info": {
+    "displayName": "Citation Formats",
+    "description": "Different citation format styles"
+  },
+  "options": {},
+  "attributes": {
+    "apa": {
+      "type": "text"
+    },
+    "mla": {
+      "type": "text"
+    },
+    "chicago": {
+      "type": "text"
+    },
+    "harvard": {
+      "type": "text"
+    },
+    "ieee": {
+      "type": "text"
+    },
+    "bibtex": {
+      "type": "text"
+    }
+  }
+}

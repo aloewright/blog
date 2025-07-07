@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "story_ideas",
+  "info": {
+    "singularName": "story-idea",
+    "pluralName": "story-ideas",
+    "displayName": "Story Idea",
+    "description": "AI-discovered story ideas and trends"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "angle": {
+      "type": "text"
+    },
+    "sources": {
+      "type": "json"
+    },
+    "trendingScore": {
+      "type": "decimal",
+      "min": 0,
+      "max": 100
+    },
+    "relevanceScore": {
+      "type": "decimal",
+      "min": 0,
+      "max": 100
+    },
+    "category": {
+      "type": "string"
+    },
+    "keywords": {
+      "type": "json"
+    },
+    "suggestedHeadlines": {
+      "type": "json"
+    },
+    "targetAudience": {
+      "type": "json"
+    },
+    "competitorAnalysis": {
+      "type": "json"
+    },
+    "uniqueAngle": {
+      "type": "text"
+    },
+    "potentialImpact": {
+      "type": "enumeration",
+      "enum": ["low", "medium", "high", "viral"]
+    },
+    "researchStartingPoints": {
+      "type": "json"
+    },
+    "expertSources": {
+      "type": "json"
+    },
+    "visualConcepts": {
+      "type": "json"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["discovered", "reviewing", "assigned", "in_progress", "published", "rejected"]
+    },
+    "discoveredDate": {
+      "type": "datetime"
+    },
+    "aiSource": {
+      "type": "string"
+    }
+  }
+}

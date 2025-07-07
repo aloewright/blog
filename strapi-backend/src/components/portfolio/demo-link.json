@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_portfolio_demo_links",
+  "info": {
+    "displayName": "Demo Link",
+    "description": "Links to live demos or embeddable content",
+    "icon": "external-link"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "live-demo",
+        "video",
+        "codesandbox",
+        "codepen",
+        "stackblitz",
+        "github",
+        "figma",
+        "other"
+      ],
+      "default": "live-demo",
+      "required": true
+    },
+    "embedCode": {
+      "type": "text"
+    },
+    "isEmbedded": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

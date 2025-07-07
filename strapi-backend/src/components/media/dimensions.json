@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_media_dimensions",
+  "info": {
+    "displayName": "Dimensions",
+    "description": "Media dimensions"
+  },
+  "options": {},
+  "attributes": {
+    "width": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "aspectRatio": {
+      "type": "decimal"
+    },
+    "fileSize": {
+      "type": "biginteger"
+    },
+    "duration": {
+      "type": "decimal"
+    },
+    "frameRate": {
+      "type": "integer"
+    }
+  }
+}

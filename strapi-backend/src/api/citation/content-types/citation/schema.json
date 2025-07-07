@@ -1,0 +1,112 @@
+{
+  "kind": "collectionType",
+  "collectionName": "citations",
+  "info": {
+    "singularName": "citation",
+    "pluralName": "citations",
+    "displayName": "Citation",
+    "description": "Citations from Semantic Scholar, news, and social media"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "sourceType": {
+      "type": "enumeration",
+      "enum": ["semantic_scholar", "news", "social_media", "website", "book", "video", "podcast", "other"],
+      "required": true
+    },
+    "sourceUrl": {
+      "type": "string"
+    },
+    "authors": {
+      "type": "json",
+      "description": "List of authors or creators"
+    },
+    "publicationDate": {
+      "type": "date"
+    },
+    "accessedDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "excerpt": {
+      "type": "text",
+      "description": "Relevant excerpt or quote from the source"
+    },
+    "fullText": {
+      "type": "richtext",
+      "description": "Full text if available"
+    },
+    "abstract": {
+      "type": "text"
+    },
+    "doi": {
+      "type": "string"
+    },
+    "semanticScholarId": {
+      "type": "string"
+    },
+    "publication": {
+      "type": "string",
+      "description": "Journal, newspaper, or platform name"
+    },
+    "verificationStatus": {
+      "type": "enumeration",
+      "enum": ["verified", "unverified", "disputed", "fact_checked"],
+      "default": "unverified"
+    },
+    "factCheckNotes": {
+      "type": "text"
+    },
+    "statistics": {
+      "type": "json",
+      "description": "Key statistics or data points from the source"
+    },
+    "tags": {
+      "type": "json"
+    },
+    "relevanceScore": {
+      "type": "decimal",
+      "min": 0,
+      "max": 1,
+      "description": "AI-calculated relevance score"
+    },
+    "socialMetrics": {
+      "type": "json",
+      "description": "Likes, shares, views, etc."
+    },
+    "screenshot": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "attachments": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["files", "images"]
+    },
+    "citationFormats": {
+      "type": "component",
+      "repeatable": false,
+      "component": "reference.citation-formats"
+    },
+    "aiAnalysis": {
+      "type": "json",
+      "description": "AI analysis of the citation content"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-post.blog-post",
+      "mappedBy": "citations"
+    }
+  }
+}

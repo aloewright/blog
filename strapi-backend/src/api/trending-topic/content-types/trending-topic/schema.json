@@ -1,0 +1,111 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trending_topics",
+  "info": {
+    "singularName": "trending-topic",
+    "pluralName": "trending-topics",
+    "displayName": "Trending Topic",
+    "description": "AI-discovered trending topics for content ideation"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "topic": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "topic"
+    },
+    "description": {
+      "type": "text"
+    },
+    "trendScore": {
+      "type": "decimal",
+      "required": true,
+      "min": 0,
+      "max": 100
+    },
+    "trendDirection": {
+      "type": "enumeration",
+      "enum": ["rising", "stable", "falling", "viral"],
+      "default": "stable"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category"
+    },
+    "keywords": {
+      "type": "json",
+      "description": "Related keywords and phrases"
+    },
+    "sources": {
+      "type": "json",
+      "description": "Sources where trend was detected"
+    },
+    "relatedTopics": {
+      "type": "json"
+    },
+    "geographicRelevance": {
+      "type": "json",
+      "description": "Geographic regions where topic is trending"
+    },
+    "demographicRelevance": {
+      "type": "json",
+      "description": "Demographic groups interested in this topic"
+    },
+    "discoveredAt": {
+      "type": "datetime",
+      "required": true
+    },
+    "peakDate": {
+      "type": "date"
+    },
+    "expiresAt": {
+      "type": "datetime"
+    },
+    "contentIdeas": {
+      "type": "json",
+      "description": "AI-generated content ideas for this trend"
+    },
+    "competitorAnalysis": {
+      "type": "json",
+      "description": "Analysis of competitor content on this topic"
+    },
+    "sentimentAnalysis": {
+      "type": "json",
+      "description": "Public sentiment analysis"
+    },
+    "suggestedAngles": {
+      "type": "json",
+      "description": "Unique angles for covering this topic"
+    },
+    "relatedPosts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-post.blog-post"
+    },
+    "storyIdeas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::story-idea.story-idea"
+    },
+    "aiProvider": {
+      "type": "string",
+      "description": "AI provider that discovered this trend"
+    },
+    "confidence": {
+      "type": "decimal",
+      "min": 0,
+      "max": 1
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

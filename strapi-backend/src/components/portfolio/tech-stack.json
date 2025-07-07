@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_portfolio_tech_stacks",
+  "info": {
+    "displayName": "Tech Stack",
+    "description": "Technology used in the project",
+    "icon": "code"
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "frontend",
+        "backend",
+        "database",
+        "devops",
+        "testing",
+        "other"
+      ],
+      "required": true
+    },
+    "version": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "strapi-backend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "build": "strapi build",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/provider-upload-aws-s3": "^5.17.0",
+    "@strapi/strapi": "5.17.0",
+    "pg": "^8.11.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.1",
+    "sharp": "^0.34.2",
+    "sqlite3": "^5.1.7",
+    "styled-components": "^6.1.19"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "abc123def456",
+    "template": "https://github.com/strapi/strapi-template-blog"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

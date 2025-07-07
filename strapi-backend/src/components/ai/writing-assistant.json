@@ -1,0 +1,58 @@
+{
+  "collectionName": "components_ai_writing_assistants",
+  "info": {
+    "displayName": "AI Writing Assistant",
+    "description": "Configuration for AI-powered writing assistance"
+  },
+  "options": {},
+  "attributes": {
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "providers": {
+      "type": "json",
+      "description": "Enabled AI providers (claude, chatgpt, gemini, ollama)"
+    },
+    "activeProvider": {
+      "type": "enumeration",
+      "enum": ["claude", "chatgpt", "gemini", "ollama", "auto"],
+      "default": "auto"
+    },
+    "modelSettings": {
+      "type": "json",
+      "description": "Model-specific settings and parameters"
+    },
+    "systemPrompt": {
+      "type": "text",
+      "description": "System prompt for AI context"
+    },
+    "articlePrompts": {
+      "type": "json",
+      "description": "Custom prompts for article generation"
+    },
+    "brandVoice": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ai.brand-voice"
+    },
+    "writingStyle": {
+      "type": "enumeration",
+      "enum": ["formal", "casual", "academic", "journalistic", "creative", "technical", "conversational", "persuasive"],
+      "default": "journalistic"
+    },
+    "tonePreferences": {
+      "type": "json",
+      "description": "Detailed tone preferences and guidelines"
+    },
+    "vocabularyLevel": {
+      "type": "enumeration",
+      "enum": ["basic", "intermediate", "advanced", "technical", "mixed"],
+      "default": "intermediate"
+    },
+    "assistanceHistory": {
+      "type": "json",
+      "description": "History of AI assistance for this content"
+    }
+  }
+}

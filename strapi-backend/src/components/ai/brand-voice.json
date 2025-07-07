@@ -1,0 +1,57 @@
+{
+  "collectionName": "components_ai_brand_voices",
+  "info": {
+    "displayName": "Brand Voice",
+    "description": "Custom brand voice configuration"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "voiceCharacteristics": {
+      "type": "json",
+      "description": "Key characteristics of the brand voice"
+    },
+    "sampleTexts": {
+      "type": "json",
+      "description": "Sample texts that exemplify the brand voice"
+    },
+    "doList": {
+      "type": "json",
+      "description": "Writing dos for this brand voice"
+    },
+    "dontList": {
+      "type": "json",
+      "description": "Writing don'ts for this brand voice"
+    },
+    "keyPhrases": {
+      "type": "json",
+      "description": "Key phrases and terminology to use"
+    },
+    "targetAudience": {
+      "type": "text"
+    },
+    "brandValues": {
+      "type": "json"
+    },
+    "emotionalTone": {
+      "type": "json",
+      "description": "Emotional qualities of the voice"
+    },
+    "referenceDocuments": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["files", "images"]
+    },
+    "trainingData": {
+      "type": "json",
+      "description": "Additional training data for AI models"
+    }
+  }
+}

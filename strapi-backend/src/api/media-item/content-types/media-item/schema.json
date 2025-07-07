@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_items",
+  "info": {
+    "singularName": "media-item",
+    "pluralName": "media-items",
+    "displayName": "Media Item",
+    "description": "Media library with enhanced metadata"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "alternativeText": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "text"
+    },
+    "file": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images", "videos", "files", "audios"]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": ["image", "video", "document", "audio", "other"]
+    },
+    "tags": {
+      "type": "json"
+    },
+    "metadata": {
+      "type": "json"
+    },
+    "usageRights": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "creditTo": {
+      "type": "string"
+    }
+  }
+}
