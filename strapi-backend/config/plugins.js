@@ -1,4 +1,12 @@
 module.exports = ({ env }) => ({
+  'cloud-cronjob-runner': {
+    enabled: true,
+    config: {
+      apiToken: env('STRAPI_CLOUD_CRONJOB_API_TOKEN'),
+      apiUrl: env('STRAPI_CLOUD_CRONJOB_API_URL'),
+      firstRunWindow: env.int('STRAPI_CLOUD_CRONJOB_FIRST_RUN_WINDOW', 300),
+    },
+  },
   upload: {
     config: {
       provider: 'aws-s3',
