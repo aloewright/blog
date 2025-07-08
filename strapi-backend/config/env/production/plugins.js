@@ -1,13 +1,26 @@
-module.exports = ({ env }) => ({
-  // Cloud cronjob runner configuration for Strapi Cloud
-  'cloud-cronjob-runner': {
-    enabled: true,
-    config: {
-      apiToken: env('STRAPI_CLOUD_CRONJOB_API_TOKEN'),
-      apiUrl: env('STRAPI_CLOUD_CRONJOB_API_URL'),
-      firstRunWindow: env.int('STRAPI_CLOUD_CRONJOB_FIRST_RUN_WINDOW', 300),
+module.exports = ({ env }) => {
+  // Try to get the cloud cronjob runner values
+  const cronjobToken = env('STRAPI_CLOUD_CRONJOB_API_TOKEN') || env('CRONJOB_API_TOKEN') || env('CLOUD_CRONJOB_API_TOKEN');
+  const cronjobUrl = env('STRAPI_CLOUD_CRONJOB_API_URL') || env('CRONJOB_API_URL') || env('CLOUD_CRONJOB_API_URL');
+  const cronjobWindow = env.int('STRAPI_CLOUD_CRONJOB_FIRST_RUN_WINDOW', 300);
+  
+  // Log for debugging
+  console.log('Cronjob config:', {
+    hasToken: !!cronjobToken,
+    hasUrl: !!cronjobUrl,
+    window: cronjobWindow
+  });
+  
+  return {
+    // Cloud cronjob runner configuration for Strapi Cloud
+    'cloud-cronjob-runner': {
+      enabled: !!(cronjobToken && cronjobUrl),
+      config: {
+        apiToken: cronjobToken || 'dummy-token-not-configured',
+        apiUrl: cronjobUrl || 'https://api.strapi.cloud/dummy',
+        firstRunWindow: cronjobWindow,
+      },
     },
-  },
   // Upload configuration
   upload: {
     config: {
@@ -37,4 +50,5 @@ module.exports = ({ env }) => ({
       },
     },
   },
-});
+  };
+};
